@@ -175,7 +175,16 @@
   <div class="dh"><div><h2>Bảng việc của đội</h2><div class="zn">Việc sếp giao trong Claude và trên văn phòng</div><div class="zn" id="vpSync">Đang đọc Sổ việc…</div></div><button class="x" id="bX" aria-label="Đóng">×</button></div>
   <div class="tabs"><button data-f="ns" class="on">Nhân sự</button><button data-f="td">Tiến độ</button><button data-f="dang">Đang làm</button><button data-f="xong">Xong</button></div>
   <div id="tasks"></div>
-  <div class="howto" style="padding:8px 10px">Đề bài giao cho Yên trong ô chat: Yên tự chia việc nhỏ, giao đúng người, các bạn tự chuyển kết quả cho nhau, Yên kiểm tra rồi trình sếp một kết quả cuối. Việc gửi/đăng/chi tiền dừng lại chờ sếp duyệt. Muốn đội làm thật qua Muse thì nhắn đề bài trong chat Muse, Muse ghi vào Sổ việc. <code id="howCmd" style="display:inline;padding:2px 6px">Yên ơi, làm đề bài mới trên Bảng việc nhé</code> <button id="bCopy" style="padding:4px 9px;font-size:11.5px">Chép</button></div>
+  <div class="howto" style="padding:8px 10px">
+    <b style="display:block;margin-bottom:6px">Giao đề bài cho Yên</b>
+    <textarea id="vpBrief" rows="2" placeholder="Nhập đề bài giao cho Yên, ví dụ: Viết bài về ngày 20/11 rồi đăng lên fanpage…" style="width:100%;box-sizing:border-box;resize:vertical;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:8px;color:#fff;padding:8px 9px;font:inherit;font-size:12.5px;line-height:1.5"></textarea>
+    <div style="display:flex;gap:6px;margin-top:6px">
+      <button id="bAssign" style="flex:1;padding:8px 10px;font-size:12.5px;font-weight:700;border-radius:8px;border:1px solid var(--line);background:var(--acc);color:#04202e;cursor:pointer">Giao việc cho Yên</button>
+      <button id="bCopy" style="padding:8px 10px;font-size:12px">Chép đề bài</button>
+    </div>
+    <div id="vpAssignNote" style="margin-top:6px;color:#e6f7ff;font-weight:600;white-space:pre-wrap"></div>
+    <div style="margin-top:6px">Yên tự chia việc nhỏ, giao đúng người, các bạn tự chuyển kết quả cho nhau, Yên kiểm tra rồi trình sếp một kết quả cuối. Việc gửi/đăng/chi tiền dừng lại chờ sếp duyệt. Việc chia trên bảng chỉ xem được lúc trang mở — muốn đội làm thật, sếp nhắn đề bài trong chat Muse, Muse ghi vào Sổ việc.</div>
+  </div>
 </aside>
 <script>
 /* Nếu module 3D không khởi động được sau 15 giây, hiện lỗi rõ thay vì màn hình đen. */
@@ -1654,7 +1663,18 @@ async function delTask(t) {
 document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => { filter = b.dataset.f; document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b)); renderTasks(); });
 $('bBoard').onclick = () => { const on = !boardEl.classList.contains('show'); select(null); boardEl.classList.toggle('show', on); };
 $('bX').onclick = () => boardEl.classList.remove('show');
-$('bCopy').onclick = async () => { try { await navigator.clipboard.writeText($('howCmd').textContent); $('bCopy').textContent = 'Đã chép'; } catch (e) { $('bCopy').textContent = 'Sếp bôi đen câu trên để chép'; } setTimeout(() => $('bCopy').textContent = 'Chép', 2500); };
+$('bCopy').onclick = async () => { const t = $('vpBrief').value.trim(); if (!t) { $('bCopy').textContent = 'Chưa có đề bài để chép'; setTimeout(() => $('bCopy').textContent = 'Chép đề bài', 2000); return; } try { await navigator.clipboard.writeText(t); $('bCopy').textContent = 'Đã chép'; } catch (e) { $('bCopy').textContent = 'Sếp bôi đen đề bài để chép'; } setTimeout(() => $('bCopy').textContent = 'Chép đề bài', 2500); };
+$('bAssign').onclick = async () => {
+  const brief = $('vpBrief').value.trim();
+  if (!brief) { $('vpAssignNote').textContent = 'Sếp nhập đề bài vào ô trên rồi bấm Giao việc nhé ạ.'; return; }
+  $('bAssign').disabled = true; $('bAssign').textContent = 'Đang chia việc…';
+  const plan = await yenSplit(brief);
+  $('vpBrief').value = '';
+  $('bAssign').disabled = false; $('bAssign').textContent = 'Giao việc cho Yên';
+  $('vpAssignNote').textContent = plan.reply + '\n— Việc trên bảng chỉ xem được lúc trang mở. Muốn đội làm thật, sếp chép đề bài sang chat Muse nhé ạ.';
+  filter = 'td'; renderTasks();
+};
+$('vpBrief').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); $('bAssign').click(); } });
 
 /* ---- khả năng của trang: bộ nhớ trong trang (thay claude.use) ---- */
 /* Môi trường này không có claude.use('db') / claude.use('sample').
