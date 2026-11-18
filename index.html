@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Văn phòng số Văn Phòng Số</title>
+<title>Văn phòng số An Nhiên</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#e9f4ff;--mute:rgba(233,244,255,.62);--acc:#39d5ff;--acc2:#ff6fae;--glass:rgba(10,16,32,.72);--line:rgba(57,213,255,.22)}
+  :root{--ink:#ffffff;--mute:rgba(233,244,255,.88);--acc:#39d5ff;--acc2:#ff6fae;--glass:rgba(8,13,28,.9);--line:rgba(57,213,255,.22)}
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;overflow:hidden;font-family:'Be Vietnam Pro',system-ui,sans-serif;color:var(--ink);background:#070b16}
   #c{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
@@ -19,7 +19,7 @@
   #brand{position:fixed;left:14px;top:14px;padding:10px 14px;display:flex;align-items:center;gap:10px}
   #brand .logo{width:30px;height:30px;border-radius:9px;background:conic-gradient(from 200deg,#39d5ff,#7b5cff,#ff6fae,#39d5ff);box-shadow:0 0 18px rgba(57,213,255,.55);display:grid;place-items:center;font-weight:800;font-size:14px;color:#fff}
   #brand b{font-size:15px;letter-spacing:.3px;display:block}
-  #brand small{font-size:11.5px;color:var(--mute)}
+  #brand small{font-size:11.5px;color:#d7ecff;font-weight:600}
   #brand .live{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3dffa8;box-shadow:0 0 8px #3dffa8;margin-right:5px;vertical-align:1px;}
   @keyframes pulse{50%{opacity:.35}}
   /* thanh phòng ban */
@@ -27,7 +27,7 @@
   .rb{position:relative;width:44px;height:44px;padding:0;border-radius:13px;display:grid;place-items:center;font-size:12px;font-weight:800;letter-spacing:.3px}
   .rb i{position:absolute;inset:5px;border-radius:9px;border:2px solid var(--c);box-shadow:0 0 10px var(--c),inset 0 0 8px var(--c);opacity:.85}
   .rb span{position:relative}
-  .rb .tip{position:absolute;left:54px;top:50%;transform:translateY(-50%);white-space:nowrap;background:rgba(10,16,32,.92);border:1px solid var(--line);padding:6px 10px;border-radius:9px;font-size:12px;font-weight:600;pointer-events:none;opacity:0;transition:opacity .15s}
+  .rb .tip{position:absolute;left:54px;top:50%;transform:translateY(-50%);white-space:nowrap;background:#0a1020;border:1px solid var(--line);padding:6px 10px;border-radius:9px;font-size:12px;font-weight:700;color:#fff;pointer-events:none;opacity:0;transition:opacity .15s}
   .rb:hover .tip{opacity:1}
   .rb .bd{position:absolute;right:-4px;top:-4px;min-width:17px;height:17px;border-radius:9px;background:var(--acc2);font-size:10px;display:none;place-items:center;padding:0 4px;box-shadow:0 0 8px var(--acc2)}
   .sep{height:1px;background:var(--line);margin:3px 4px}
@@ -35,7 +35,7 @@
   #roomPop{position:fixed;left:78px;top:80px;transform:translate(-8px,0);width:250px;padding:12px;opacity:0;pointer-events:none;transition:.2s}
   #roomPop.show{opacity:1;pointer-events:auto;transform:none}
   #roomPop h3{margin:0 0 2px;font-size:14px}
-  #roomPop p{margin:0 0 8px;font-size:11.5px;color:var(--mute)}
+  #roomPop p{margin:0 0 8px;font-size:11.5px;color:#d7ecff;font-weight:600}
   .chips{display:flex;flex-wrap:wrap;gap:6px;max-height:46vh;overflow:auto}
   .chip{display:flex;align-items:center;gap:6px;padding:4px 9px 4px 4px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:12.5px;cursor:pointer}
   .chip:hover{border-color:var(--acc)}
@@ -50,7 +50,7 @@
   #sRes.show{display:block}
   .sr{display:flex;gap:8px;align-items:center;padding:7px;border-radius:10px;cursor:pointer;font-size:13px}
   .sr:hover{background:rgba(57,213,255,.12)}
-  .sr small{display:block;color:var(--mute);font-size:11px}
+  .sr small{display:block;color:#d7ecff;font-weight:600;font-size:11px}
   #bBoard{position:relative}
   #bBoard .bd{position:absolute;right:-6px;top:-6px;min-width:18px;height:18px;border-radius:9px;background:var(--acc2);font-size:10.5px;display:none;place-items:center;padding:0 5px;box-shadow:0 0 8px var(--acc2)}
   /* công cụ */
@@ -61,68 +61,68 @@
   .dh{padding:14px 14px 10px;display:flex;gap:11px;align-items:flex-start;border-bottom:1px solid var(--line)}
   .dh .big{width:44px;height:44px;border-radius:14px;font-size:17px}
   .dh h2{margin:0;font-size:16px}
-  .dh .role{font-size:12.5px;color:var(--acc);font-weight:600}
-  .dh .zn{font-size:11.5px;color:var(--mute)}
+  .dh .role{font-size:12.5px;color:#8fe6ff;font-weight:700}
+  .dh .zn{font-size:11.5px;color:#d7ecff;font-weight:600}
   .dh .x{margin-left:auto;padding:4px 9px;font-size:16px;background:none;border:none}
   .vw{display:flex;gap:6px;margin-top:8px}.vw button{font-size:11.5px;padding:5px 10px;border-radius:999px}
   #fpHint{position:fixed;left:50%;top:14px;transform:translateX(-50%);padding:6px 8px 6px 14px;font-size:12.5px;display:none;align-items:center;gap:10px;z-index:5}
   #fpHint span{color:var(--mute)}#fpHint button{padding:5px 10px;font-size:12px}
-  .duty{font-size:12.5px;line-height:1.5;color:var(--mute);padding:8px 14px;border-bottom:1px solid var(--line)}
+  .duty{font-size:12.5px;font-weight:600;line-height:1.5;color:#e6f7ff;padding:8px 14px;border-bottom:1px solid var(--line)}
   #thread{flex:1;overflow:auto;padding:12px 14px;display:flex;flex-direction:column;gap:9px}
-  .m{max-width:84%;padding:9px 12px;border-radius:14px;font-size:13.5px;line-height:1.5;white-space:pre-wrap}
+  .m{max-width:84%;padding:9px 12px;border-radius:14px;font-size:13.5px;font-weight:600;line-height:1.5;white-space:pre-wrap;color:#fff}
   .m.me{align-self:flex-end;background:linear-gradient(135deg,#1fb6ff,#7b5cff);border-bottom-right-radius:4px}
   .m.nv{align-self:flex-start;background:rgba(255,255,255,.08);border:1px solid var(--line);border-bottom-left-radius:4px}
-  .m.sys{align-self:center;max-width:95%;font-size:11.5px;color:var(--mute);background:none;padding:2px;text-align:center}
+  .m.sys{align-self:center;max-width:95%;font-size:11.5px;color:#d7ecff;font-weight:600;background:none;padding:2px;text-align:center}
   .m .tg{display:block;margin-top:5px;font-size:11px;color:#3dffa8}
-  .typing{align-self:flex-start;font-size:12px;color:var(--mute)}
+  .typing{align-self:flex-start;font-size:12px;color:#d7ecff;font-weight:600}
   .quick{display:flex;gap:6px;flex-wrap:wrap;padding:0 14px 8px}
   .quick button{font-size:11.5px;padding:5px 9px;border-radius:999px}
   form{display:flex;gap:8px;padding:10px 12px 12px;border-top:1px solid var(--line)}
   #msg{flex:1;resize:none;font-family:inherit;font-size:13.5px;color:var(--ink);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:12px;padding:9px 11px;outline:none;max-height:120px}
   #msg:focus{border-color:var(--acc)}
   #send{padding:0 14px;background:linear-gradient(135deg,#1fb6ff,#7b5cff);border:none}
-  .note{font-size:11px;color:var(--mute);padding:0 14px 10px;line-height:1.45}
+  .note{font-size:11px;color:#d7ecff;font-weight:600;padding:0 14px 10px;line-height:1.45}
   /* bảng việc */
   .tabs{display:flex;gap:6px;padding:10px 14px}
   .tabs button{flex:1;font-size:12px;padding:6px}
   #tasks{flex:1;overflow:auto;padding:0 14px 10px;display:flex;flex-direction:column;gap:8px}
-  .tk{padding:10px 11px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:13px}
+  .tk{padding:10px 11px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid var(--line);font-size:13px}
   .tk .top{display:flex;align-items:center;gap:7px;margin-bottom:5px}
   .tk .who{font-weight:700}
-  .tk .when{margin-left:auto;font-size:11px;color:var(--mute)}
-  .tk .txt{line-height:1.45}
+  .tk .when{margin-left:auto;font-size:11px;color:#cfe8ff;font-weight:600}
+  .tk .txt{line-height:1.45;color:#fff;font-weight:600}
   .tk .kq{margin-top:6px;font-size:12px;color:#3dffa8;line-height:1.45}
   .tk .act{display:flex;gap:6px;margin-top:8px}
   .tk .act button{font-size:11.5px;padding:5px 9px}
   .st{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px}
-  .st.moi{background:rgba(255,111,174,.18);color:#ff9cc8}.st.dang{background:rgba(255,184,48,.18);color:#ffcf6b}.st.xong{background:rgba(61,255,168,.15);color:#3dffa8}.st.cho{background:rgba(164,107,255,.22);color:#c9a8ff}
+  .st.moi{background:rgba(255,111,174,.32);color:#ffc4dd}.st.dang{background:rgba(255,184,48,.32);color:#ffe1a1}.st.xong{background:rgba(61,255,168,.3);color:#8affc9}.st.cho{background:rgba(164,107,255,.35);color:#ddc8ff}
   .bar{height:6px;border-radius:4px;background:rgba(255,255,255,.08);margin-top:7px;overflow:hidden}
   .bar i{display:block;height:100%;background:linear-gradient(90deg,#1fb6ff,#7b5cff)}
-  .note2{margin-top:6px;font-size:12px;color:#bfe9ff;line-height:1.45}
+  .note2{margin-top:6px;font-size:12px;color:#e6f7ff;font-weight:600;line-height:1.45}
   .note2 em{font-style:normal;color:var(--mute)}
-  .sepgiao{margin-top:5px;font-size:11.5px;color:var(--mute)}
+  .sepgiao{margin-top:5px;font-size:11.5px;color:#d7ecff;font-weight:600}
   .howto{margin:0 14px 14px;padding:11px;border-radius:12px;background:rgba(57,213,255,.08);border:1px dashed rgba(57,213,255,.4);font-size:12px;line-height:1.5}
   .howto code{display:block;margin:6px 0;padding:7px 9px;border-radius:8px;background:rgba(0,0,0,.35);font-family:inherit;color:#bff1ff}
-  .empty{color:var(--mute);font-size:12.5px;text-align:center;padding:24px 8px}
+  .empty{color:#d7ecff;font-weight:600;font-size:12.5px;text-align:center;padding:24px 8px}
   #toast{position:fixed;left:50%;top:14px;transform:translate(-50%,-140%);padding:9px 16px;font-size:13px;font-weight:600;transition:transform .35s;border-width:1.5px;max-width:calc(100% - 520px);text-align:center}
   #toast.show{transform:translate(-50%,0)}
   @media (max-width:760px){#toast{top:58px;max-width:calc(100% - 24px)}}
   #live{position:fixed;left:14px;bottom:14px;width:330px;padding:10px 12px}
   #live .lh{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:800;cursor:pointer}
   #live .lh .n{background:rgba(255,184,48,.2);color:#ffcf6b;border-radius:8px;padding:1px 8px;font-size:12px}
-  #live .lh .tg{margin-left:auto;font-size:12px;color:var(--mute);font-weight:600}
+  #live .lh .tg{margin-left:auto;font-size:12px;color:#d7ecff;font-weight:700}
   #live .li{display:flex;gap:8px;align-items:center;padding:6px 4px;border-top:1px solid rgba(255,255,255,.06);cursor:pointer;font-size:12.5px}
   #live .li:hover{background:rgba(57,213,255,.08)}
   #live .li .av{width:22px;height:22px;font-size:10px}
   #live .li .tx{flex:1;min-width:0}
   #live .li .tx b{font-weight:700}
-  #live .li .tx .ds{display:block;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  #live .li .tm{font-size:11px;color:var(--mute);white-space:nowrap}
-  #live .none{font-size:12px;color:var(--mute);padding:6px 4px 2px}
+  #live .li .tx .ds{display:block;color:#d7ecff;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #live .li .tm{font-size:11px;color:#cfe8ff;font-weight:600;white-space:nowrap}
+  #live .none{font-size:12px;color:#d7ecff;font-weight:600;padding:6px 4px 2px}
   #live.min .li,#live.min .none,#live.min .more{display:none}
   #live .more{font-size:11.5px;color:var(--acc);padding:6px 4px 0;cursor:pointer}
   #subs{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);width:min(620px,calc(100% - 700px));min-width:320px;display:flex;flex-direction:column;gap:6px;pointer-events:none;z-index:4}
-  .sub{background:rgba(10,16,32,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:14px;padding:8px 13px;font-size:14px;line-height:1.45;color:#fff;border-left:4px solid var(--c);transition:opacity .6s,transform .35s;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+  .sub{background:rgba(8,13,28,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:14px;padding:8px 13px;font-size:14px;font-weight:600;line-height:1.45;color:#fff;border-left:4px solid var(--c);transition:opacity .6s,transform .35s;box-shadow:0 6px 20px rgba(0,0,0,.25)}
   .sub b{color:var(--c);margin-right:6px}
   .sub.hide{opacity:0;transform:translateY(6px)}
   body.fp #subs{bottom:24px;width:min(720px,calc(100% - 40px))}
@@ -148,7 +148,7 @@
 <body>
 <canvas id="c"></canvas>
 <div id="loading">Đang khởi động văn phòng số…</div>
-<div id="brand" class="glass"><div class="logo">AN</div><div><b>VĂN PHÒNG SỐ · Văn phòng số</b><small><span class="live"></span>40 thành viên · 8 phòng</small></div></div>
+<div id="brand" class="glass"><div class="logo">AN</div><div><b>AN NHIÊN · Văn phòng số</b><small><span class="live"></span>40 thành viên · 8 phòng</small></div></div>
 <nav id="dock" class="glass"></nav>
 <div id="roomPop" class="glass"><h3 id="rpName"></h3><p id="rpSub"></p><div class="chips" id="rpList"></div></div>
 <div id="searchBox"><div id="sWrap"><input id="q" placeholder="Tìm nhân sự…" autocomplete="off"><div id="sRes" class="glass"></div></div><button id="bBoard" class="glass">Bảng việc<span class="bd" id="bBoardN"></span></button></div>
@@ -175,7 +175,7 @@
   <div class="dh"><div><h2>Bảng việc của đội</h2><div class="zn">Việc sếp giao trong Claude và trên văn phòng</div><div class="zn" id="vpSync">Đang đọc Sổ việc…</div></div><button class="x" id="bX" aria-label="Đóng">×</button></div>
   <div class="tabs"><button data-f="ns" class="on">Nhân sự</button><button data-f="td">Tiến độ</button><button data-f="dang">Đang làm</button><button data-f="xong">Xong</button></div>
   <div id="tasks"></div>
-  <div class="howto" style="padding:8px 10px">Việc sếp nhắn trên văn phòng, để đội làm thì chép câu này dán vào Claude: <code id="howCmd" style="display:inline;padding:2px 6px">Yên ơi, làm các việc mới trên Bảng việc văn phòng nhé</code> <button id="bCopy" style="padding:4px 9px;font-size:11.5px">Chép</button></div>
+  <div class="howto" style="padding:8px 10px">Đề bài giao cho Yên trong ô chat: Yên tự chia việc nhỏ, giao đúng người, các bạn tự chuyển kết quả cho nhau, Yên kiểm tra rồi trình sếp một kết quả cuối. Việc gửi/đăng/chi tiền dừng lại chờ sếp duyệt. Muốn đội làm thật qua Muse thì nhắn đề bài trong chat Muse, Muse ghi vào Sổ việc. <code id="howCmd" style="display:inline;padding:2px 6px">Yên ơi, làm đề bài mới trên Bảng việc nhé</code> <button id="bCopy" style="padding:4px 9px;font-size:11.5px">Chép</button></div>
 </aside>
 <script type="module">
 import * as THREE from 'three';
@@ -190,17 +190,25 @@ import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 
 try { await Promise.race([document.fonts.load('800 40px "Be Vietnam Pro"'), new Promise(r => setTimeout(r, 2500))]); } catch (e) {}
 
+/* ---- giờ Việt Nam: toàn trang dùng Asia/Ho_Chi_Minh, không dùng giờ máy ---- */
+const VN_TZ = 'Asia/Ho_Chi_Minh';
+function vnParts(ms) { const p = {}; new Intl.DateTimeFormat('vi-VN', { timeZone: VN_TZ, hour12: false, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).formatToParts(new Date(ms)).forEach(x => p[x.type] = x.value); return p; }
+function vnTime(ms) { const p = vnParts(ms); return p.hour + ':' + p.minute + ':' + p.second; }
+function vnDateStr(ms) { const p = vnParts(ms); return p.year + '-' + p.month + '-' + p.day; }
+// Giờ tường trên sổ là giờ Việt Nam -> đổi sang epoch: VN = UTC+7, không có giờ mùa hè.
+function vnWallToMs(y, mo, d, h, mi) { return Date.UTC(y, mo - 1, d, (h || 0) - 7, mi || 0); }
+
 /* ---------------- Dữ liệu đội ---------------- */
 const ZONES = [
   { id:'lead', room:'Phòng Leader', name:'Điều phối', color:'#ff7aa8', people:[
     ['Yên','Leader Marketing','Nhận việc từ sếp, chia việc cho đúng người và kiểm tra cuối trước khi trình sếp.','f']]},
   { id:'front', room:'Sảnh lễ tân', name:'Chăm sóc khách hàng', color:'#2fd0ff', people:[
-    ['Tiểu Bảo','Chăm sóc khách hàng','Đón khách, chăm sóc khách hàng qua Zalo cá nhân và cộng đồng Văn Phòng Số.','m']]},
+    ['Tiểu Bảo','Chăm sóc khách hàng','Đón khách, chăm sóc khách hàng qua Zalo cá nhân và cộng đồng An Nhiên.','m']]},
   { id:'design', room:'Phòng Thiết kế & Web', name:'Thiết kế & Web', color:'#22d3a6', people:[
     ['Lam','Chuyên gia Giao diện','Lên bố cục, thẩm mỹ giao diện và đề bài thiết kế cho cả đội.','f'],
     ['Linh','Designer','Làm banner, thumbnail và ảnh minh họa.','f'],
     ['Nhiên','Landing Page, website','Dựng landing page, website cho các lớp học và dự án khác.','f'],
-    ['Thanh','Chuyên viên Landing Page Phễu Văn Phòng Số','Dựng landing page phễu Văn Phòng Số.','f'],
+    ['Thanh','Chuyên viên Landing Page Phễu An Nhiên','Dựng landing page phễu An Nhiên.','f'],
     ['Phương','Chuyên viên Landing Page ESO','Dựng landing page ESO để dán vào LadiPage.','f'],
     ['Khoa','Chuyên viên App Web Đa lĩnh vực','Làm app web nhiều màn hình, nhiều luồng dùng.','m'],
     ['Đạt','Chuyên viên App Flow','Làm app trên nền Flow theo brief của sếp.','m'],
@@ -218,14 +226,14 @@ const ZONES = [
     ['Duyên','Chuyên viên Zalo OA ESO','Lo Zalo OA ESO: broadcast, bài OA, mẫu ZNS.','f'],
     ['Lan','Truyền thông Zalo Ăn Vui','Soạn tin truyền thông, nhắc lịch cho nhóm Zalo lớp học.','f'],
     ['Tín','Chuyên viên Phát tin Zalo nhóm','Phát tin, ảnh, video đã duyệt tới các nhóm Zalo lớp học.','m'],
-    ['Mai','Truyền thông cộng đồng Văn Phòng Số','Chăm nhóm Zalo cộng đồng Văn Phòng Số và email cho chị Diễm.','f'],
+    ['Mai','Truyền thông cộng đồng An Nhiên','Chăm nhóm Zalo cộng đồng An Nhiên và email cho chị Diễm.','f'],
     ['Trang','Email Marketing ESO','Làm email ESO trên LadiPage.','f'],
     ['Hiền','Chuyên viên Email TKT ybai','Gửi email lớp học thầy Tư trên ybai.','f'],
     ['Kiên','Chuyên gia Tăng trưởng Kênh Video','Phân tích kênh mẫu, công thức lan tỏa, lịch đăng đa nền tảng.','m']]},
   { id:'ads', room:'Phòng Quảng cáo & Video', name:'Quảng cáo & Video', color:'#ff7a45', people:[
     ['Quân','Social & Ads, dựng video','Quảng cáo đa kênh, quản ngân sách và dựng video.','m'],
     ['Phúc','Facebook Ads đa dự án','Chạy quảng cáo Facebook, Instagram cho các lớp học.','m'],
-    ['Bảo','Facebook Ads team Văn Phòng Số','Chạy quảng cáo Facebook cho team Văn Phòng Số.','m'],
+    ['Bảo','Facebook Ads team An Nhiên','Chạy quảng cáo Facebook cho team An Nhiên.','m'],
     ['Nam','Facebook Ads','Quảng cáo Facebook dự phòng và dự án Yên giao.','m'],
     ['Vinh','Chuyên viên Video AI trên Flow','Làm video AI trong ứng dụng Flow.','m']]},
   { id:'ops', room:'Phòng Đào tạo & Lớp học', name:'Đào tạo & Lớp học', color:'#a46bff', people:[
@@ -340,7 +348,7 @@ function screenTexture(title, color, kind = 0) {
   g.fillStyle = color; g.fillRect(0, 0, 768, 10);
   g.font = '800 46px "Be Vietnam Pro", sans-serif'; g.fillStyle = '#ffffff'; g.textBaseline = 'top';
   g.fillText(title, 36, 34);
-  g.font = '600 24px "Be Vietnam Pro", sans-serif'; g.fillStyle = 'rgba(255,255,255,.6)';
+  g.font = '600 24px "Be Vietnam Pro", sans-serif'; g.fillStyle = 'rgba(255,255,255,.88)';
   g.fillText(kind === 2 ? 'Bảng điều phối hôm nay' : 'Tiến độ tuần này', 36, 92);
   if (kind === 2) {
     ['Cần làm', 'Đang làm', 'Chờ duyệt', 'Xong'].forEach((t, i) => {
@@ -373,19 +381,19 @@ function drawScreen(S, all) {
   g.fillStyle = gr; g.fillRect(0, 0, 1024, 576); g.fillStyle = col; g.fillRect(0, 0, 1024, 12);
   const mine = all.filter(t => !S.zone || t.phong === S.zone.room);
   const run = mine.filter(t => t.status === 'dang'), wait = mine.filter(t => t.status === 'moi' || t.status === 'cho duyet');
-  const now = Date.now(), done = mine.filter(t => t.status === 'xong' && new Date(t.at || 0).toDateString() === new Date().toDateString());
+  const now = Date.now(), done = mine.filter(t => t.status === 'xong' && vnDateStr(t.at || 0) === vnDateStr(now));
   g.textBaseline = 'top'; g.fillStyle = '#fff'; g.font = '800 54px "Be Vietnam Pro"'; g.fillText(S.title, 40, 36);
-  g.font = '600 30px "Be Vietnam Pro"'; g.fillStyle = 'rgba(255,255,255,.65)';
+  g.font = '600 30px "Be Vietnam Pro"'; g.fillStyle = 'rgba(255,255,255,.92)';
   g.fillText(`${run.length} đang làm · ${wait.length} chờ · ${done.length} xong hôm nay`, 40, 104);
   const list = run.concat(wait).slice(0, 4);
-  if (!list.length) { g.font = '600 34px "Be Vietnam Pro"'; g.fillStyle = 'rgba(255,255,255,.45)'; g.fillText('Chưa có việc nào đang chạy', 40, 220); }
+  if (!list.length) { g.font = '600 34px "Be Vietnam Pro"'; g.fillStyle = 'rgba(255,255,255,.75)'; g.fillText('Chưa có việc nào đang chạy', 40, 220); }
   list.forEach((t, i) => {
     const y = 168 + i * 98, pc = typeof t.pct === 'number' ? t.pct : 0;
     g.fillStyle = 'rgba(255,255,255,.06)'; g.fillRect(40, y, 944, 84);
     g.fillStyle = t.status === 'dang' ? '#ffb830' : '#ff6fae'; g.fillRect(40, y, 10, 84);
     g.fillStyle = '#fff'; g.font = '800 32px "Be Vietnam Pro"'; g.fillText(t.to || '', 66, y + 10);
     const nw = g.measureText(t.to || '').width;
-    g.font = '600 28px "Be Vietnam Pro"'; g.fillStyle = 'rgba(255,255,255,.8)';
+    g.font = '600 28px "Be Vietnam Pro"'; g.fillStyle = 'rgba(255,255,255,.95)';
     let tx = (t.viec || ''); while (g.measureText(tx).width > 820 - nw && tx.length > 4) tx = tx.slice(0, -2); if (tx !== (t.viec || '')) tx += '…';
     g.fillText(tx, 66 + nw + 18, y + 13);
     g.fillStyle = 'rgba(255,255,255,.12)'; g.fillRect(66, y + 58, 800, 12);
@@ -892,8 +900,8 @@ function seatWorld(c) { return { x: c.position.x, z: c.position.z, rot: c.rotati
   g.textAlign = 'center'; g.textBaseline = 'middle';
   g.font = '800 64px "Be Vietnam Pro"'; g.fillStyle = 'rgba(255,255,255,.75)'; g.fillText('CHÀO MỪNG ĐẾN VỚI', 1024, 210);
   const tg = g.createLinearGradient(500, 0, 1550, 0); tg.addColorStop(0, '#7fe6ff'); tg.addColorStop(0.5, '#ffffff'); tg.addColorStop(1, '#ff9ccf');
-  g.font = '800 230px "Be Vietnam Pro"'; g.fillStyle = tg; g.fillText('VĂN PHÒNG SỐ', 1024, 390);
-  g.font = '600 56px "Be Vietnam Pro"'; g.fillStyle = 'rgba(255,255,255,.8)'; g.fillText('Đội nhân sự Văn Phòng Số · 8 phòng ban · 40 thành viên', 1024, 560);
+  g.font = '800 230px "Be Vietnam Pro"'; g.fillStyle = tg; g.fillText('AN NHIÊN', 1024, 390);
+  g.font = '600 56px "Be Vietnam Pro"'; g.fillStyle = 'rgba(255,255,255,.8)'; g.fillText('Đội nhân sự An Nhiên · 8 phòng ban · 40 thành viên', 1024, 560);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
   add(new THREE.PlaneGeometry(10, 4), screenMat(t, 1.15), cx, 2.3, cz - 3.09, scene, false);
   add(new THREE.BoxGeometry(10.4, 0.04, 0.05), led('#2fd0ff', 3), cx, 0.2, cz - 3.08, scene, false);
@@ -1152,7 +1160,7 @@ function seatWorld(c) { return { x: c.position.x, z: c.position.z, rot: c.rotati
   const c = document.createElement('canvas'); c.width = 1024; c.height = 576; const g = c.getContext('2d');
   const gr = g.createLinearGradient(0, 0, 1024, 576); gr.addColorStop(0, '#2a2466'); gr.addColorStop(1, '#0f1a33'); g.fillStyle = gr; g.fillRect(0, 0, 1024, 576);
   g.fillStyle = '#fff'; g.font = '800 70px "Be Vietnam Pro"'; g.fillText('Họp giao ban', 60, 130);
-  g.font = '600 38px "Be Vietnam Pro"'; g.fillStyle = '#c9c3ff'; g.fillText('Kế hoạch tuần · đội Văn Phòng Số', 60, 195);
+  g.font = '600 38px "Be Vietnam Pro"'; g.fillStyle = '#c9c3ff'; g.fillText('Kế hoạch tuần · đội An Nhiên', 60, 195);
   ['Chiến dịch lớp học', 'Video & quảng cáo', 'Báo cáo số liệu'].forEach((s, i) => { g.fillStyle = PALETTE[i]; g.fillRect(60, 270 + i * 80, 14, 50); g.fillStyle = '#fff'; g.font = '600 40px "Be Vietnam Pro"'; g.fillText(s, 96, 308 + i * 80); });
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
   add(new THREE.PlaneGeometry(4.0, 2.25), screenMat(t, 0.95), r.cx, 1.9, r.z0 + 0.2, scene, false);
@@ -1367,7 +1375,9 @@ function openChat(p) {
     form.style.display = '';
     ['Báo cáo tiến độ giúp chị', 'Hôm nay em đang làm gì?', 'Giao việc mới'].forEach(t => { const b = document.createElement('button'); b.textContent = t; b.onclick = () => { if (t === 'Giao việc mới') { $('msg').value = p.n + ' ơi, '; $('msg').focus(); } else { $('msg').value = t; sendMsg(); } }; quick.appendChild(b); });
     $('msg').placeholder = 'Nhắn việc cho ' + p.n + '…';
-    $('cNote').textContent = 'Việc sếp nhắn ở đây chỉ lưu trong lúc trang mở. Để đội làm thật, sếp chép việc sang Claude để ghi vào Sổ việc nhé.';
+    $('cNote').textContent = p.n === 'Yên'
+      ? 'Đề bài giao cho Yên ở đây: Yên tự chia việc nhỏ, giao đúng người theo chuyên môn, các bạn tự chuyển kết quả cho nhau, Yên kiểm tra rồi trình sếp một kết quả cuối. Việc gửi/đăng/chi tiền dừng lại chờ sếp duyệt. Việc chia trên văn phòng chỉ hiện trong lúc trang mở; việc thật do Muse ghi vào Sổ việc.'
+      : 'Việc sếp nhắn ở đây chỉ lưu trong lúc trang mở. Để đội làm thật, sếp chép việc sang Claude để ghi vào Sổ việc nhé.';
     chatMsgs = (localChats[p.slug] || []).slice();
     renderThread();
     if (chatUnsub) { chatUnsub(); chatUnsub = null; }
@@ -1425,7 +1435,7 @@ async function sendMsg() {
   let out = null;
   if (SAMPLE) {
     const hist = msgs.slice(-8).map(m => (m.from === 'sep' ? 'Sếp: ' : p.n + ': ') + m.text).join('\n');
-    const prompt = `Em là ${p.n} - ${p.r} trong đội nhân sự Văn Phòng Số. Việc chính của em: ${p.d}
+    const prompt = `Em là ${p.n} - ${p.r} trong đội nhân sự An Nhiên. Việc chính của em: ${p.d}
 Người nhắn là sếp. Luật: gọi "sếp", xưng "em", tiếng Việt tự nhiên, ấm áp, ngắn gọn (1 đến 3 câu), không chen tiếng Anh, không dùng emoji.
 Không được nói là đã làm xong, đã gửi hay đã đăng bất cứ thứ gì: em chỉ đang nhận việc trên văn phòng ảo.
 Nếu sếp giao việc: xác nhận đã nhận; nhắc sếp chép việc sang Claude để đội ghi vào Sổ việc rồi làm; nếu thiếu thông tin quyết định (hạn, nơi lưu, kênh gửi) thì hỏi đúng một câu.
@@ -1444,8 +1454,8 @@ Chỉ trả về JSON đúng dạng: {"traLoi": "...", "laViec": true hoặc fal
   }
   let task = '';
   if (out.laViec) {
-    task = (out.tomTat || text).slice(0, 120);
-    await addTask(p, text, task);
+    if (p.n === 'Yên') { const plan = await yenSplit(text); out.traLoi = plan.reply; task = plan.first; }
+    else { task = (out.tomTat || text).slice(0, 120); await addTask(p, text, task); }
   }
   typing = false;
   const reply = { from: 'nv', text: out.traLoi, at: Date.now() };
@@ -1462,10 +1472,67 @@ $('cX').onclick = () => { if (fpP) { chatEl.classList.remove('show'); return; } 
 /* ---- bảng việc ---- */
 let tasks = [], filter = 'ns';
 const ST = { moi: 'Mới', dang: 'Đang làm', xong: 'Xong', 'cho duyet': 'CHỜ CHỦ DUYỆT' };
-async function addTask(p, raw, tomTat) {
-  // Trang chỉ đọc Sổ việc: việc nhắn trong ô chat không tạo việc cục bộ.
-  // Đội làm thật khi sếp chép việc sang Claude để ghi vào Sổ việc.
-  return;
+/* Việc chia trên văn phòng: chỉ hiện trong lúc trang mở (nguồn 'vanphong'),
+   không ghi vào Sổ việc. Việc thật do Muse ghi vào Sổ việc, trang đọc sổ mỗi 5 giây. */
+let localTasks = [];
+async function addTask(p, raw, tomTat, extra) {
+  const t = { id: 'local-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), to: p.n, slug: p.slug, phong: p.zone.room, viec: tomTat, nguyenVan: raw, status: (extra && extra.status) || 'moi', at: Date.now(), ketQua: '', nguon: 'vanphong', nguoiGiao: (extra && extra.nguoiGiao) || 'Yên', nguoiNhan: (extra && extra.nguoiNhan) || '', nguoiPhoiHop: (extra && extra.nguoiPhoiHop) || '' };
+  localTasks.unshift(t);
+  refreshTasks();
+  return t;
+}
+/* ---- Yên tự chia đề bài (quy tắc đội tự làm việc) ---- */
+function normNoAccent(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase(); }
+// Khớp theo TỪ (cụm từ thì khớp chuỗi): 'anh' không khớp 'thanh', 'dang' không khớp 'đang'.
+const YEN_RULES = [
+  { k: ['viet', 'noi dung', 'bai viet', 'cap', 'kich ban', 'thong diep', 'blog'], n: 'Minh', v: 'Viết nội dung' },
+  { k: ['anh', 'banner', 'thumbnail', 'thiet ke', 'hinh anh', 'hinh minh hoa'], n: 'Linh', v: 'Làm ảnh' },
+  { k: ['landing', 'website', 'web', 'app'], n: 'Nhiên', v: 'Dựng trang/app' },
+  { k: ['video', 'quay', 'dung video'], n: 'Vinh', v: 'Làm video' },
+  { k: ['quang cao', 'ads', 'chay ads', 'ngan sach'], n: 'Phúc', v: 'Chạy quảng cáo' },
+  { k: ['dang bai', 'dang len', 'dang fanpage', 'fanpage', 'facebook', 'reels', 'zalo', 'kenh'], n: 'Hà', v: 'Đăng nháp' },
+  { k: ['email'], n: 'Trang', v: 'Soạn email' },
+  { k: ['bao cao', 'so lieu', 'thong ke'], n: 'Hân', v: 'Làm báo cáo' },
+  { k: ['nhac', 'jingle'], n: 'Ngân', v: 'Làm nhạc' },
+  { k: ['zoom', 'mc'], n: 'Châu', v: 'Chuẩn bị buổi học' },
+  { k: ['tuyen', 'hop dong', 'nhan su'], n: 'Quyên', v: 'Lo nhân sự' },
+];
+const YEN_SEND = ['Đăng nháp', 'Chạy quảng cáo', 'Soạn email']; // gửi/đăng/chi tiền: dừng chờ sếp duyệt
+async function yenSplit(brief) {
+  const nb = normNoAccent(brief);
+  const words = new Set(nb.split(/[^a-z0-9]+/).filter(Boolean));
+  const hasKw = k => k.includes(' ') ? nb.includes(k) : words.has(k) || ((k === 'web' || k === 'app') && nb.includes(k));
+  let steps = [];
+  for (const r of YEN_RULES) if (r.k.some(hasKw)) steps.push(r);
+  steps = steps.filter((r, i) => steps.findIndex(x => x.n === r.n) === i);
+  if (!steps.length) steps = [YEN_RULES[0], YEN_RULES[1], YEN_RULES[5]]; // mặc định: Minh viết -> Linh làm ảnh -> Hà đăng nháp
+  const hasWrite = steps.some(s => s.n === 'Minh'), hasImage = steps.some(s => s.n === 'Linh');
+  if (hasWrite && hasImage && !steps.some(s => s.n === 'Thảo')) {
+    const i = steps.findIndex(s => s.n === 'Linh');
+    steps.splice(i + 1, 0, { n: 'Thảo', v: 'Soát chữ và duyệt' });
+  }
+  const short = brief.length > 60 ? brief.slice(0, 57) + '…' : brief;
+  const made = [];
+  for (let i = 0; i < steps.length; i++) {
+    const s = steps[i], p = byName(s.n);
+    if (!p) continue;
+    const sendStep = YEN_SEND.includes(s.v);
+    const t = await addTask(p, brief, s.v + ': ' + short, { status: sendStep ? 'cho duyet' : 'moi', nguoiGiao: 'Yên', nguoiNhan: i + 1 < steps.length ? steps[i + 1].n : 'Yên', nguoiPhoiHop: i + 1 < steps.length ? steps[i + 1].n : '' });
+    made.push({ step: s, task: t });
+  }
+  // Yên kiểm tra rồi trình sếp một kết quả cuối (chờ sếp duyệt).
+  const yen = byName('Yên');
+  if (yen) await addTask(yen, brief, 'Yên kiểm tra rồi trình sếp kết quả cuối: ' + short, { status: 'cho duyet', nguoiGiao: 'Yên', nguoiNhan: 'Sếp' });
+  // Diễn hoạt chuỗi chuyển việc: Yên giao -> từng bạn chuyển nhau -> nộp lại cho Yên.
+  const now = Date.now();
+  if (made.length) actQueue.push({ loai: 'giao', tu: 'Yên', den: made[0].step.n, noiDung: made[0].task.viec, waitSec: 2, readyAt: now + 800 });
+  for (let i = 0; i + 1 < made.length; i++) actQueue.push({ loai: 'phoi-hop', tu: made[i].step.n, den: made[i + 1].step.n, noiDung: 'Chuyển kết quả: ' + made[i].task.viec, reply: 'Ok, làm liền', waitSec: 2, readyAt: now + 6000 * (i + 1) });
+  if (made.length) actQueue.push({ loai: 'nop', tu: made[made.length - 1].step.n, den: 'Yên', noiDung: 'Nộp kết quả để Yên kiểm tra', waitSec: 2, readyAt: now + 6000 * made.length });
+  const list = made.map((m, i) => (i + 1) + '. ' + m.step.n + ' — ' + m.step.v + (YEN_SEND.includes(m.step.v) ? ' (chờ sếp duyệt)' : '')).join('\n');
+  let reply = 'Dạ sếp, em chia đề bài thành ' + made.length + ' việc nhỏ, đã ghi lên Bảng việc, các bạn tự chuyển kết quả cho nhau, em kiểm tra rồi trình sếp một kết quả cuối ạ:\n' + list;
+  const needInfo = made.some(m => YEN_SEND.includes(m.step.v)) && !/ngay|han|gio|kenh|facebook|zalo|youtube|email|tiktok/i.test(brief);
+  if (needInfo) reply += '\nEm còn thiếu một ý mới dám làm bước gửi/đăng: sếp muốn đăng/gửi ở kênh nào và hạn khi nào ạ?';
+  return { reply, first: 'Yên đã chia thành ' + made.length + ' việc nhỏ' };
 }
 function alertNote(s) { $('cNote').textContent = s; }
 function renderLive() {
@@ -1557,7 +1624,7 @@ function renderTasks() {
   list.forEach(t => {
     const p = people.find(x => x.slug === t.slug);
     const d = document.createElement('div'); d.className = 'tk';
-    d.innerHTML = `<div class="top"><span class="av" style="background:${p ? p.zone.color : '#39d5ff'}">${esc(initial(t.to || '?'))}</span><span class="who">${esc(t.to)}</span><span class="st ${t.status}">${ST[t.status] || t.status}</span><span class="when">${t.nguon === 'claude' ? 'Từ Claude · ' : ''}${timeAgo(t.at || Date.now())}</span></div><div class="txt">${esc(t.viec || t.nguyenVan || '')}</div>${progHTML(t)}${t.ketQua ? `<div class="kq">Kết quả: ${esc(t.ketQua)}</div>` : ''}`;
+    d.innerHTML = `<div class="top"><span class="av" style="background:${p ? p.zone.color : '#39d5ff'}">${esc(initial(t.to || '?'))}</span><span class="who">${esc(t.to)}</span><span class="st ${t.status}">${ST[t.status] || t.status}</span><span class="when">${t.nguon === 'claude' ? 'Từ Claude · ' : t.nguon === 'vanphong' ? 'Văn phòng · ' : ''}${timeAgo(t.at || Date.now())}</span></div><div class="txt">${esc(t.viec || t.nguyenVan || '')}</div>${progHTML(t)}${t.ketQua ? `<div class="kq">Kết quả: ${esc(t.ketQua)}</div>` : ''}`;
     const act = document.createElement('div'); act.className = 'act';
     const mk = (label, fn) => { const b = document.createElement('button'); b.textContent = label; b.onclick = fn; act.appendChild(b); };
     if (t.status !== 'dang' && t.status !== 'xong') mk('Đang làm', () => setStatus(t, 'dang'));
@@ -1568,14 +1635,12 @@ function renderTasks() {
   });
 }
 async function setStatus(t, s) {
-  if (!String(t.id).startsWith('local-')) { toast('Sổ việc là nguồn chính — sếp sửa trạng thái trực tiếp trên Sheet nhé', '#ffb830'); return; }
-  if (DB) { try { await DB.doc('viec/' + t.id).update({ status: s }); return; } catch (e) {} }
-  t.status = s; refreshTasks();
+  if (String(t.id).startsWith('local-')) { t.status = s; if (s === 'xong') t.xongAt = Date.now(); refreshTasks(); onTasksChanged(); return; }
+  toast('Sổ việc là nguồn chính — sếp sửa trạng thái trực tiếp trên Sheet nhé', '#ffb830');
 }
 async function delTask(t) {
-  if (!String(t.id).startsWith('local-')) { toast('Sổ việc là nguồn chính — sếp xóa việc trực tiếp trên Sheet nhé', '#ffb830'); return; }
-  if (DB) { try { await DB.doc('viec/' + t.id).delete(); return; } catch (e) {} }
-  tasks = tasks.filter(x => x !== t); refreshTasks();
+  if (String(t.id).startsWith('local-')) { localTasks = localTasks.filter(x => x !== t); tasks = tasks.filter(x => x !== t); refreshTasks(); return; }
+  toast('Sổ việc là nguồn chính — sếp xóa việc trực tiếp trên Sheet nhé', '#ffb830');
 }
 document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => { filter = b.dataset.f; document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b)); renderTasks(); });
 $('bBoard').onclick = () => { const on = !boardEl.classList.contains('show'); select(null); boardEl.classList.toggle('show', on); };
@@ -2141,16 +2206,15 @@ function vpCell(row, i) { const c = row.c && row.c[i]; return c && c.v != null ?
 function vpParseTime(s) {
   const dstr = String(s || '');
   const dm = dstr.match(/^Date\((\d+),(\d+),(\d+)(?:,(\d+),(\d+))?\)$/);
-  if (dm) return new Date(+dm[1], +dm[2], +dm[3], +(dm[4] || 0), +(dm[5] || 0)).getTime();
+  if (dm) return vnWallToMs(+dm[1], +dm[2] + 1, +dm[3], +(dm[4] || 0), +(dm[5] || 0));
   const m = dstr.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}):(\d{2}))?/);
-  if (m) return new Date(+m[3], +m[2] - 1, +m[1], +(m[4] || 0), +(m[5] || 0)).getTime();
+  if (m) return vnWallToMs(+m[3], +m[2], +m[1], +(m[4] || 0), +(m[5] || 0));
   const d = Date.parse(dstr); return isNaN(d) ? Date.now() : d;
 }
 function vpSetSync(ok) {
   const el = $('vpSync'); if (!el) return;
   if (ok) {
-    const d = new Date(), p = n => String(n).padStart(2, '0');
-    el.textContent = 'Đọc sổ lúc ' + p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
+    el.textContent = 'Đọc sổ lúc ' + vnTime(Date.now()) + ' (giờ Việt Nam)';
   } else el.textContent = 'Chưa đọc được sổ…, đang thử lại';
 }
 // Tên trong sổ -> nhân viên; "Sếp" hoặc tên lạ -> Leader Yên
@@ -2174,7 +2238,8 @@ function vpApply(next) {
   const prev = new Map(tasks.map(t => [t.id, t]));
   const first = vpFirstLoad;
   vpFirstLoad = false;
-  tasks = next;
+  // Gộp việc Yên chia trên văn phòng (nguồn 'vanphong', chỉ sống trong lúc trang mở) vào Bảng việc.
+  tasks = next.concat(localTasks).sort((a, b) => (b.at || 0) - (a.at || 0));
   if (!first) {
     next.forEach(t => {
       const p = prev.get(t.id);
@@ -2400,7 +2465,7 @@ function startTrick(p, k) { p.trick = k; p.trickT = TRICK_TIME[k] || 3; p.trickA
 const clock = new THREE.Clock();
 const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 let nightMix = 0;
-let frameAcc = 0, frameN = 0;
+let frameAcc = 0, frameN = 0, shadowsOff = false; // pixelRatio GIỮ min(devicePixelRatio, 2), không bao giờ tự hạ
 const wp = new THREE.Vector3();
 function tick() {
   const dt = Math.min(clock.getDelta(), 0.05), t = clock.elapsedTime;
@@ -2468,7 +2533,8 @@ function tick() {
   backWall.visible = camera.position.z > Z0 + 1.5;
   if (!fpP) controls.update();
   frameAcc += dt; frameN++;
-  if (frameAcc > 3) { const ms = frameAcc / frameN * 1000; if (ms > 34 && PR > 1.5) { PR = 1.5; renderer.setPixelRatio(PR); resize(); } frameAcc = 0; frameN = 0; }
+  // Trang nặng thì chỉ giảm BÓNG ĐỔ (tắt bóng nắng một lần), không hạ độ nét, không mờ chữ.
+  if (frameAcc > 3) { const ms = frameAcc / frameN * 1000; if (ms > 34 && !shadowsOff) { shadowsOff = true; sun.castShadow = false; renderer.shadowMap.enabled = false; scene.traverse(o => { if (o.material) o.material.needsUpdate = true; }); } frameAcc = 0; frameN = 0; }
   renderer.render(scene, camera);
   requestAnimationFrame(tick);
 }
